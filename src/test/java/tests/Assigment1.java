@@ -25,20 +25,28 @@ public class Assigment1
 
     }
 
+
+    @Test
+    public void test(){
+        WebElement searchTextField = driver.findElement(By.name("q"));
+        searchTextField.sendKeys("test");
+        searchTextField.sendKeys(Keys.ENTER);
+        //driver.findElement(By.xpath("(//h3)[1]")).click();
+        driver.findElement(By.xpath("(//h3[@class='LC20lb DKV0Md'])[1]")).click();
+    }
+
+    /*
    @Test
    public void test(){
        WebElement searchTextField = driver.findElement(By.name("q"));
        searchTextField.sendKeys("test");
        searchTextField.sendKeys(Keys.ENTER);
-   // driver.findElement(By.name("q")).sendKeys("test");
-   // driver.findElement(By.name("btnK")).click();
-    driver.findElement(By.xpath(" //div[@data-hveid='CAIQAA']//ancestor::h3")).click();
+       driver.findElement(By.xpath(" //div[@data-hveid='CAIQAA']//ancestor::h3")).click();
    }
-
+*/
     //responsible for closing
     @AfterClass
     public void tearDown() throws InterruptedException {
-        Thread.sleep(1000);
-        //driver.quit();
+       driver.quit();
     }
 }
